@@ -28,7 +28,12 @@ export default function Home() {
     "Godot"
   ]
   const projects: Project[] = [
-
+    {
+      name: "boid simulation",
+      description: "simulates flocking behavior using socially applied forces",
+      imageSrc: "/image",
+      url: "/projects/boids"
+    }
   ]
 
   return (
