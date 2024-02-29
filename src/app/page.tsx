@@ -9,7 +9,10 @@ import SkillCard from "@/components/skill-card"
 
 export default function Home() {
   return (
-    <main id="top" className="text-slate-50 text-center text-lg min-h-screen min-w-screen bg-gray-600 bg-gradient-to-tr from-gray-400 via-gray-600 to-blue-800 overflow-hidden">
+    <main 
+      id="top" 
+      className="text-slate-50 text-center text-lg min-h-screen min-w-screen bg-gray-400 bg-gradient-to-t from-gray-400 via-gray-600 to-blue-800 overflow-hidden"
+    >
       <Navbar />
       <Hero />
       <div className="flex flex-row justify-center">
