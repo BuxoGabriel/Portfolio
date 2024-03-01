@@ -30,6 +30,12 @@ export const projects = [
        imageSrc: "/tadpoles.png",
        url: "http://buxogabriel.github.io/"
      },
+     {
+        name: "Todo App",
+        description: "An offline-first todo PWA. This fullstack app was built in sveltekit with handrolled auth and is still in development.",
+        imageSrc: "/todo.png",
+        url: "https://capable-praline-7301a7.netlify.app/"
+     }
 ] as const
 
 export const Titles = [
