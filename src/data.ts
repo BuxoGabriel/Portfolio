@@ -24,12 +24,12 @@ export const languages = [
 ] as const
 
 export const projects = [
-    {
-      name: "boid simulation",
-      description: "simulates flocking behavior using socially applied forces",
-      imageSrc: "/image",
-      url: "/projects/boids"
-    }
+    //  {
+    //    name: "boid simulation",
+    //    description: "simulates flocking behavior using socially applied forces",
+    //    imageSrc: "/image",
+    //    url: "/projects/boids"
+    //  }
 ] as const
 
 export const Titles = [
