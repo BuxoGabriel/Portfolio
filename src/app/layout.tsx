@@ -14,9 +14,7 @@ export const metadata: Metadata = {
     url:"/",
     description: APP_DESCRIPTION,
     siteName: "Gabriel Buxo Portfolio",
-    images: [{
-      url: "/favicon"
-    }]
+    images: []
   }
 };
 
