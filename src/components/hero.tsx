@@ -25,7 +25,9 @@ export default function Hero() {
                 Download Resume
                 <FaDownload className="w-10 h-10 inline px-2"/>
             </a>
-            <a className="w-64 border-2 rounded-full bg-slate-100 text-slate-900 border-slate-900 hover:bg-slate-900 hover:text-slate-50" href="http://www.github.com/buxogabriel">
+            <a 
+                className="w-64 border-2 rounded-full bg-slate-100 text-slate-900 border-slate-900 hover:bg-slate-900 hover:text-slate-50"
+                href="http://www.github.com/buxogabriel" target="_blank" rel="noopener noreferrer">
                 Visit My Github
                 <FaGithub className="w-10 h-10 inline px-2"/>
             </a>
