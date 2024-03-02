@@ -8,7 +8,7 @@ export type Project = {
 }
 
 export default function ProjectCard(props: Project) {
-    return <article className="border-2 border-black rounded-xl bg-gray-200 w-96 min-h-96 p-4 text-black">
+    return <article className="border-2 border-black rounded-xl bg-gray-200 w-96 min-h-96 p-4 text-black hover:scale-110 transition-transform">
         <a href={props.url} target={(props.url[0] == '/')?"_self": "_blank"} rel="noopener noreferrer">
             <header className="text-2xl">{props.name}</header>
             <p>{props.description}</p>

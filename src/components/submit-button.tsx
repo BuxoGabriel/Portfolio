@@ -12,7 +12,7 @@ export default function SubmitButton({ success }: SubmitButtonProps) {
         disabled={pending || success}
         aria-disabled={pending || success} 
         type="submit" 
-        className={"w-1/2 max-w-96 border-black border-2 text-black" + 
+        className={"min-w-64 w-1/2 border-black border-2 text-black" + 
             ((pending || success)? "": " hover:bg-slate-800 hover:text-slate-100") +
             (pending? " bg-gray-400": success? " bg-green-400": " bg-slate-100")
         }

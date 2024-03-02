@@ -11,5 +11,5 @@ export default function TitleSpinner() {
     useInterval(() => {
         setTitleIndex(index => (index + 1) % Titles.length)
     }, TITLECHANGETIME)
-    return <span className="overflow-hidden">{Titles[titleIndex]}</span>
+    return <span key={Titles[titleIndex]} className="overflow-hidden animate-fade-in-out opacity-0">{Titles[titleIndex]}</span>
 }

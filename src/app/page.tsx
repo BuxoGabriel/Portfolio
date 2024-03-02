@@ -15,7 +15,7 @@ export default function Home() {
     >
       <Navbar />
       <Hero />
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-row justify-center 2xl:flex-col 2xl:absolute 2xl:top-20 2xl:right-4 2xl:justify-start">
         <SkillCard />
         <LangCard />
       </div>
