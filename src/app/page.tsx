@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main 
       id="top" 
-      className="text-slate-50 text-center text-lg min-h-screen min-w-screen bg-slate-800 overflow-hidden"
+      className="text-slate-50 text-center text-lg min-h-screen min-w-screen bg-slate-800 overflow-clip"
     >
       <Navbar />
       <Hero />

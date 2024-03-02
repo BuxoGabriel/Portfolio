@@ -1,5 +1,5 @@
 export default function Footer() {
-    return <section>
+    return <section className="w-full h-32">
 
     </section>
 }

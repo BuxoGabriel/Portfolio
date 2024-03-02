@@ -47,5 +47,6 @@ export const projects = [
 export const Titles = [
     "Software Engineer",
     "Computer Scientist",
-    "Machine Learning Enthusiast"
+    "Machine Learning Enthusiast",
+    "Fullstack Developer"
 ] as const
