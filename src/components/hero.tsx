@@ -13,7 +13,7 @@ export default function Hero() {
             Coding for over a decade. AI/ML enthusiast and fullstack developer
         </p>
         <div className="flex flex-col md:flex-row items-center capitalize justify-center gap-4">
-            <a className="w-64 border-2 rounded-full bg-slate-100 text-slate-900 border-black shadow-sm shadow-black hover:bg-slate-900 hover:text-slate-50" href="#contact">
+            <a className="w-64 border-2 rounded-full bg-blue-500 text-white border-black shadow-sm shadow-black hover:bg-slate-900 hover:text-slate-50" href="#contact">
                 Contact Me
                 <FaArrowRight className="w-10 h-10 inline px-2"/>
             </a>
