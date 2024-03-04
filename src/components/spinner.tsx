@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactElement, useEffect, useRef } from "react"
+import { ReactElement, useCallback, useEffect, useMemo, useRef, useState } from "react"
 
 type SpinnerProps = {
     children: ReactElement[],
@@ -9,16 +9,28 @@ type SpinnerProps = {
 }
 
 export default function Spinner({children, speed, direction}: SpinnerProps) {
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(true)
+    useEffect(() => {
+        setPrefersReducedMotion(window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true)
+    }, [])
+
+    const createInner = useCallback((reducedMotion: boolean, children: ReactElement[]) => {
+        if(reducedMotion) return children
+        else return <>
+            <SpinnerInner first={true} speed={speed} direction={direction}>
+                {children}
+            </SpinnerInner>
+            <SpinnerInner first={false} speed={speed} direction={direction}>
+                {children.map(x => x)}
+            </SpinnerInner>
+        </>
+    }, [direction, speed])
+
     return <div 
-        className="w-10/12 md:w-2/3 lg:w-1/2 min-w-64 overflow-hidden flex flex-row" 
-        style={{WebkitMask: 'linear-gradient(90deg, transparent, white 20% 80%, transparent)', mask: 'linear-gradient(90deg, transparent, white 20% 80%, transparent)'}}
+        className={`w-10/12 md:w-2/3 lg:w-1/2 min-w-64 flex flex-row ${prefersReducedMotion? "flex-wrap gap-2": "overflow-hidden"}`}
+        style={prefersReducedMotion? {}: {WebkitMask: 'linear-gradient(90deg, transparent, white 20% 80%, transparent)', mask: 'linear-gradient(90deg, transparent, white 20% 80%, transparent)'}}
     >
-        <SpinnerInner first={true} speed={speed} direction={direction}>
-            {children}
-        </SpinnerInner>
-        <SpinnerInner first={false} speed={speed} direction={direction}>
-            {children.map(x => x)}
-        </SpinnerInner>
+        {createInner(prefersReducedMotion, children)}
     </div>
 }
 
