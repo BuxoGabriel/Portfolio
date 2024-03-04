@@ -7,11 +7,13 @@ export const SKILLS = [
     "Fullstack Development",
     "Low Level Programming",
     "Object Oriented Programming",
-    "Testing",
+    "Test Driven Development",
     "DevOps",
     "Docker",
     "Agile Development",
-    "Communication"
+    "Communication",
+    "Linux",
+    "Vim"
 ]
 
 export const LANGUAGES = [
@@ -25,6 +27,8 @@ export const LANGUAGES = [
     "React",
     "Svelte",
     "Angular",
+    "Java",
+    "C#",
     "Godot"
 ] as const
 

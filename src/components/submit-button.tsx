@@ -12,8 +12,8 @@ export default function SubmitButton({ success }: SubmitButtonProps) {
         disabled={pending || success}
         aria-disabled={pending || success} 
         type="submit" 
-        className={"min-w-64 w-1/2 border-black border-2 text-black" + 
-            ((pending || success)? "": " hover:bg-slate-800 hover:text-slate-100") +
+        className={"w-full border-black border-2 text-black" + 
+            ((pending || success)? "": " hover:bg-slate-900 hover:text-slate-100") +
             (pending? " bg-gray-400": success? " bg-green-400": " bg-slate-100")
         }
     >Send Email</button>

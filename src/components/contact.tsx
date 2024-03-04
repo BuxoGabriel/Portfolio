@@ -8,21 +8,21 @@ const initialState = {
 }
 
 export default function Contact() {
-    const [state, formAction] = useFormState(actionSendEmail, initialState)
-    return <section id="contact" className="px-12">
+    const [formState, formAction] = useFormState(actionSendEmail, initialState)
+    return <section id="contact" className="w-10/12 md:w-2/3 lg:w-1/2 mx-auto">
         <h2 className="text-4xl py-2">Contact Me</h2>
         <form action={formAction} className="flex flex-col w-full text-left items-center">
-            <div className="min-w-64 w-1/2">
+            <div className="w-full">
                 <label htmlFor="sender">Your Email: </label><br/>
-                <input className="border-2 border-black text-black w-full" id="sender" type="text" name="sender" required />
+                <input className="border-2 border-black text-black w-full p-2" id="sender" type="text" name="sender" required />
             </div>
-            <div className="min-w-64 w-1/2">
+            <div className="w-full">
                 <label className="align-top" htmlFor="message">Your Message: </label><br/>
-                <textarea className="border-2 border-black text-black h-48 w-full" id="message" name="message" required />
+                <textarea className="border-2 border-black text-black h-48 w-full p-2" id="message" name="message" required />
             </div>
-            <SubmitButton success={state.success}/>
+            <SubmitButton success={formState.success}/>
             <p aria-live="polite" className="sr-only" role="status">
-                {state.success? "Successfully sent email!": null}
+                {formState.success? "Successfully sent email!": null}
             </p>
         </form>
     </section>
