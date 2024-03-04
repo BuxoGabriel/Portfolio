@@ -1,15 +1,20 @@
-export const skills = [
+import tadpolesSS from "@/project-screenshots/tadpoles.png"
+import todoSS from "@/project-screenshots/todo.png"
+import musicSS from "@/project-screenshots/music.png"
+
+export const SKILLS = [
     "Algorithmic Problem Solving",
     "Fullstack Development",
-    "AI/ML",
+    "Low Level Programming",
+    "Object Oriented Programming",
     "Testing",
     "DevOps",
     "Docker",
-    "Agile Workflow",
+    "Agile Development",
     "Communication"
 ]
 
-export const languages = [
+export const LANGUAGES = [
     "Javascript",
     "Typescript",
     "C",
@@ -23,28 +28,35 @@ export const languages = [
     "Godot"
 ] as const
 
-export const projects = [
+export const PROJECTS = [
      {
        name: "Neural Networks Tadpoles",
-       description: "In my senior year of highschool I made this website. Including Neural Networks that I made from scratch used to beat flappy bird using a genetic algorithm and a fighting game made in p5js!",
-       imageSrc: "/tadpoles.png",
-       url: "http://buxogabriel.github.io/"
+       description: "In my senior year of highschool, after studying and self teaching neural networks, I created one from scratch and trained it to beat a flappy bird clone using a genetic algorithm!",
+       imageSrc: tadpolesSS,
+       imageAlt: "A screenshot of many simulated tadpoles leaping over seaweed obstacles.",
+       url: "http://buxogabriel.github.io/ai"
      },
      {
         name: "Todo App",
-        description: "An offline-first todo PWA. This fullstack app was built in sveltekit with handrolled auth and is still in development.",
-        imageSrc: "/todo.png",
+        description: "An offline-first todo PWA where you can have multiple lists and export data from your account to your local storage. This fullstack app was built in sveltekit with handrolled auth and is still in development.",
+        imageSrc: todoSS,
+        imageAlt: "A screenshot of a todo app. The user is selecting from a list of lists.",
         url: "https://capable-praline-7301a7.netlify.app/"
      },
      {
         name: "Rust Music Maker",
         description: "This app written in rust and designed as an exploration in writing files to match specifications allows users to make songs, save them to a custom file format and export them to wav files.",
-        imageSrc: "/music.png",
+        imageSrc: musicSS,
+        imageAlt: "A screenshot of the Rust Music Maker command line interface where the user creates a new song and exports it to a dot wav file.",
         url: "https://www.github.com/buxogabriel/simple-files"
      },
+    //  {
+    //     name: "TSML",
+    //     description: "A neural network library written in Typescript from scratch. I made this to apply object oriented principles and explore the mathematics behind machine learning."
+    //  }
 ] as const
 
-export const Titles = [
+export const TITLES = [
     "Software Engineer",
     "Computer Scientist",
     "Fullstack Developer"

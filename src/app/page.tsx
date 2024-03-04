@@ -6,6 +6,7 @@ import LangCard from "@/components/lang-card"
 import Navbar from "@/components/navbar"
 import Projects from "@/components/projects"
 import SkillCard from "@/components/skill-card"
+import SkillsSpinners from "@/components/skills-spinner"
 
 export default function Home() {
   return (
@@ -15,10 +16,7 @@ export default function Home() {
     >
       <Navbar />
       <Hero />
-      <div className="flex flex-row justify-center 2xl:flex-col 2xl:absolute 2xl:top-20 2xl:right-4 2xl:justify-start">
-        <SkillCard />
-        <LangCard />
-      </div>
+      <SkillsSpinners />
       <AboutMe />
       <Projects />
       <Contact />

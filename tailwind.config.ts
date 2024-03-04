@@ -9,12 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        'fade-in-out': 'fade-in-out 3s ease-in-out'
+        'fade-in-out': 'fade-in-out 3s ease-in-out',
+        'scroll': 'scroll linear infinite'
       },
       keyframes: {
         'fade-in-out': {
           '0%, 20%, 80%, 100%': { opacity: '0'},
           '30%, 70%': { opacity: '100'}
+        },
+        'scroll': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' }
         }
       }
     },
