@@ -23,7 +23,7 @@ export const LANGUAGES = [
     "Rust",
     "Python",
     "SQL",
-    "Next",
+    "NextJS",
     "React",
     "Svelte",
     "Angular",

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
+import { fontBold } from "@/lib/fonts";
 
-const inter = Inter({ subsets: ["latin"] });
-const space = Space_Mono({ subsets: ["latin"], weight: '700'});
 const APP_DESCRIPTION = "Fullstack developer with over a decade of programming experience."
 
 export const metadata: Metadata = {
@@ -26,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={space.className}>{children}</body>
+      <body className={fontBold.className}>{children}</body>
     </html>
   );
 }

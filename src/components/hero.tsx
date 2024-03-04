@@ -6,7 +6,7 @@ import TitleSpinner from "./title-spinner";
 export default function Hero() {
     return <section className="w-full xl:w-1/2 p-10 mx-auto">
         <h1 className="text-4xl flex flex-col justify-center gap-4 p-4 items-center">
-            <span className="text-8xl block"><FancyText>Gabriel Buxo</FancyText></span>
+            <span className="text-6xl md:text-8xl tracking-tight block"><FancyText>Gabriel Buxo</FancyText></span>
             <span className="block h-24"><TitleSpinner /></span>
         </h1>
         <p className="py-2 text-slate-100">

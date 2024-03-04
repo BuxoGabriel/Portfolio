@@ -1,7 +1,9 @@
+import { fontBold, fontLight } from "@/lib/fonts";
+
 export default function AboutMe() {
     return <section id="about" className="py-10">
         <h2 className="text-4xl py-2">About Me</h2>
-        <p className="text-left mx-auto w-10/12 md:w-2/3 lg:w-1/2 min-w-64 text-lg">
+        <p className={`text-left mx-auto w-10/12 md:w-2/3 lg:w-1/2 min-w-64 text-lg ${fontLight.className}`}>
             Hello! My name is Gabriel Buxo and I have been coding for over a decade.
             I have been a Javascript programmer since middle school and I have always been interested in learning and aquiring new skills.
             I always strive to produce quality software and be a valuable and collaborative team member. 
