@@ -13,12 +13,12 @@ export default async function actionSendEmail(prevState: any, formData: FormData
     })
 
     try {
-        const data = schema.parse({
+        const { sender, message } = schema.parse({
             sender: formData.get('sender'),
             message: formData.get('message')
         })
 
-        sendEmail(data.sender, data.message)
+        const { data, error} = await sendEmail(sender, message)
     } catch {
         return { success: false}
     }
@@ -26,7 +26,7 @@ export default async function actionSendEmail(prevState: any, formData: FormData
 }
 
 async function sendEmail(sender: string, message: string) {
-    const { data, error } = await resend.emails.send({
+    return await resend.emails.send({
     from: 'Gabrportfolio <onboarding@resend.dev>',
     to: 'gabrielbuxo1@gmail.com',
     subject: 'Portfolio Email!',

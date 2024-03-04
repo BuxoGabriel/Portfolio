@@ -25,8 +25,8 @@ export const languages = [
 
 export const projects = [
      {
-       name: "High School Portfolio",
-       description: "In this website I made in highschool there are a couple projects I'm proud of. Including Neural Networks that I made from scratch used to beat flappy bird using a genetic algorithm and a fighting game made in p5js!",
+       name: "Neural Networks Tadpoles",
+       description: "In my senior year of highschool I made this website. Including Neural Networks that I made from scratch used to beat flappy bird using a genetic algorithm and a fighting game made in p5js!",
        imageSrc: "/tadpoles.png",
        url: "http://buxogabriel.github.io/"
      },
@@ -47,6 +47,5 @@ export const projects = [
 export const Titles = [
     "Software Engineer",
     "Computer Scientist",
-    "Machine Learning Enthusiast",
     "Fullstack Developer"
 ] as const
