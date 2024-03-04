@@ -11,6 +11,7 @@ export const SKILLS = [
     "DevOps",
     "Docker",
     "Agile Development",
+    "Accessible Design",
     "Communication",
     "Linux",
     "Vim"
