@@ -3,7 +3,7 @@ export default function AboutMe() {
         <h2 className="text-4xl py-2">About Me</h2>
         <p className="text-left mx-auto w-10/12 md:w-2/3 lg:w-1/2 min-w-64 text-lg">
             Hello! My name is Gabriel Buxo and I have been coding for over a decade.
-            I have been a Javascript programmer since middle school and I have always been interested in learning more and aquiring new skills.
+            I have been a Javascript programmer since middle school and I have always been interested in learning and aquiring new skills.
             I always strive to produce quality software and be a valuable and collaborative team member. 
             My passion for cs has led me to make countless apps and programs some of which are below with more to come!
         </p>
