@@ -9,7 +9,7 @@ type SpinnerProps = {
 }
 
 export default function Spinner({children, speed, direction}: SpinnerProps) {
-    const [prefersReducedMotion, setPrefersReducedMotion] = useState(true)
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
     useEffect(() => {
         setPrefersReducedMotion(window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true)
     }, [])
