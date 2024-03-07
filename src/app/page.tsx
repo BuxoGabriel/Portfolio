@@ -21,8 +21,8 @@ export default function Home() {
       className={`${theme==='light'? "bg-slate-200 text-slate-800": "bg-slate-800 text-slate-50"} text-center text-lg min-h-screen min-w-screen overflow-clip transition-colors`}
     >
       <ThemeContext.Provider value={{theme, setTheme}}>
-        <Navbar />
         <LightChange />
+        <Navbar />
         <Hero />
         <SkillsSpinners />
         <AboutMe />
