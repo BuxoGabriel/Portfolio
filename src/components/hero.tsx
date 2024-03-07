@@ -9,7 +9,7 @@ export default function Hero() {
             <span className="text-6xl md:text-8xl tracking-tight block"><FancyText>Gabriel Buxo</FancyText></span>
             <span className="block h-24"><TitleSpinner /></span>
         </h1>
-        <p className="py-2 text-slate-100">
+        <p className="py-2">
             Coding for over a decade. AI/ML enthusiast and fullstack developer
         </p>
         <div className="flex flex-col md:flex-row items-center capitalize justify-center gap-4">
