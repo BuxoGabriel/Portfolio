@@ -4,16 +4,17 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import Hero from "@/components/hero"
 import LangCard from "@/components/lang-card"
+import LightChange from "@/components/toggle-theme"
 import Navbar from "@/components/navbar"
 import Projects from "@/components/projects"
 import SkillCard from "@/components/skill-card"
 import SkillsSpinners from "@/components/skills-spinner"
 import { ThemeContext } from "@/contexts"
-import { useContext, useState } from "react"
+import { useState } from "react"
 
 
 export default function Home() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark')
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
   return (
     <main 
       id="top" 
@@ -21,6 +22,7 @@ export default function Home() {
     >
       <ThemeContext.Provider value={{theme, setTheme}}>
         <Navbar />
+        <LightChange />
         <Hero />
         <SkillsSpinners />
         <AboutMe />
