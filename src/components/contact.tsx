@@ -10,7 +10,7 @@ const initialState = {
 
 export default function Contact() {
     const [formState, formAction] = useFormState(actionSendEmail, initialState)
-    return <section id="contact" className="w-10/12 md:w-2/3 lg:w-1/2 mx-auto">
+    return <section id="contact" className="w-10/12 md:w-2/3 lg:w-1/2 mx-auto scroll-mt-20">
         <h2 className="text-4xl py-2">Contact Me</h2>
         <form action={formAction} className={`flex flex-col w-full font-normal text-left items-center ${fontLight.className}`}>
             <div className="w-full">
