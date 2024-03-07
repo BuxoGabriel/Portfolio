@@ -14,7 +14,7 @@ import { useState } from "react"
 
 
 export default function Home() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark')
   return (
     <main 
       id="top" 
