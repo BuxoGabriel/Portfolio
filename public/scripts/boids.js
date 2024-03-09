@@ -202,15 +202,15 @@ class PhysicsParticle {
  */
 class Boid extends PhysicsParticle{
     static MASS = 1
-    static SIZE = 10
+    static SIZE = 8
     static SPEED = 5
-    static VISION_RANGE = 50
+    static VISION_RANGE = 30
     static VISION_RANGE_SQ = Boid.VISION_RANGE * Boid.VISION_RANGE
     static MAX_FORCE = 5
     static AVOID_FORCE = 1
     static ALIGNMENT_FORCE = 0.25
     static COHERENCE_FORCE = 0.25
-    static SEPERATION_FORCE = 5
+    static SEPERATION_FORCE = 4
     /**
      * Creates a new Boid with a random starting velocity
      * @param {number} x The initial x position of the boid
