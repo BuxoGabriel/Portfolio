@@ -4,7 +4,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 export default function Boids() {
     return <main className="min-h-screen w-screen bg-gray-400 text-left text-black">
-        <Link href={"/projects"} className="flex"><FaArrowLeft className="w-8 h-8" /></Link>
+        <Link href={"/projects"} className="flex flex-col lg:flex-row"><FaArrowLeft className="w-8 h-8" /></Link>
         <h1 className="text-3xl p-4 text-center">Boid Simulation</h1>
         <div className="flex justify-center">
             <P5Page src="/scripts/boids.js"/>
