@@ -195,14 +195,6 @@ class PhysicsParticle {
     update(delta) {
         this.position.add(Vector.scale(this.velocity, delta)) 
     }
-
-    /**
-     * Draws the particle using p5js as a black circle
-     */
-    draw() {
-        fill("black")
-        circle(this.position.x, this.position.y, 5)
-    }
 }
 
 /**
@@ -214,6 +206,7 @@ class Boid extends PhysicsParticle{
     static SPEED = 5
     static VISION_RANGE = 100
     static VISION_RANGE_SQ = Boid.VISION_RANGE * Boid.VISION_RANGE
+    static MAX_FORCE = 5
     static AVOID_FORCE = 1
     static ALIGNMENT_FORCE = 0.5
     static COHERENCE_FORCE = 1
@@ -286,6 +279,7 @@ class Boid extends PhysicsParticle{
             forces.add(this.getCoherence(avgPos, avgVel, delta))
             forces.add(this.getSeperation(totalSep))
         }
+        forces.clamp(Boid.MAX_FORCE)
         this.applyForce(forces, delta)
         this.velocity.clamp(Boid.SPEED)
         super.update(delta)
