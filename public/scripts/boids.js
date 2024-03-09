@@ -1,4 +1,4 @@
-const num_boids = 500
+const num_boids = 100
 
 const canvas = document.getElementById("canvas")
 
@@ -204,13 +204,13 @@ class Boid extends PhysicsParticle{
     static MASS = 1
     static SIZE = 10
     static SPEED = 5
-    static VISION_RANGE = 100
+    static VISION_RANGE = 50
     static VISION_RANGE_SQ = Boid.VISION_RANGE * Boid.VISION_RANGE
     static MAX_FORCE = 5
     static AVOID_FORCE = 1
-    static ALIGNMENT_FORCE = 0.5
-    static COHERENCE_FORCE = 1
-    static SEPERATION_FORCE = 25
+    static ALIGNMENT_FORCE = 0.25
+    static COHERENCE_FORCE = 0.25
+    static SEPERATION_FORCE = 5
     /**
      * Creates a new Boid with a random starting velocity
      * @param {number} x The initial x position of the boid
@@ -322,7 +322,7 @@ function initBoids() {
 }
 
 function setup() {
-    createCanvas(800, 800, canvas)
+    createCanvas(600, 600, canvas)
     initBoids()
 }
 
