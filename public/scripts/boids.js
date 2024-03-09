@@ -1,4 +1,4 @@
-const num_boids = 100
+const NUM_BOIDS = 60
 
 const canvas = document.getElementById("canvas")
 
@@ -202,15 +202,15 @@ class PhysicsParticle {
  */
 class Boid extends PhysicsParticle{
     static MASS = 1
-    static SIZE = 8
+    static SIZE = 4
     static SPEED = 5
-    static VISION_RANGE = 30
+    static VISION_RANGE = 75
     static VISION_RANGE_SQ = Boid.VISION_RANGE * Boid.VISION_RANGE
-    static MAX_FORCE = 5
+    static MAX_FORCE = 1
     static AVOID_FORCE = 1
-    static ALIGNMENT_FORCE = 0.25
+    static ALIGNMENT_FORCE = 0.5
     static COHERENCE_FORCE = 0.25
-    static SEPERATION_FORCE = 4
+    static SEPERATION_FORCE = 10
     /**
      * Creates a new Boid with a random starting velocity
      * @param {number} x The initial x position of the boid
@@ -260,7 +260,7 @@ class Boid extends PhysicsParticle{
     }
 
     getAlignment(avgVel) {
-        return avgVel.clone().subtract(this.velocity).normalize().scale(Boid.ALIGNMENT_FORCE)
+        return avgVel.clone().normalize().scale(Boid.ALIGNMENT_FORCE)
     }
 
     getCoherence(avgPos, avgVel, delta) {
@@ -285,36 +285,64 @@ class Boid extends PhysicsParticle{
         super.update(delta)
     }
 
-    /**
-     * Draws this boid as an arrow using p5js
-     */
-    draw() {
-        stroke("black")
-        fill("white")
-        const x = this.position.x
-        const y = this.position.y
-        let offset;
+    drawAsArrow() {
+        let lines = [
+            { fill: "white", line: [[0, 3], [2, -1.5], [0, 0], [-2, -1.5], [0, 3]] },
+        ]
         const velMag = this.velocity.magnitude()
         const rotationMatrix = [this.velocity.y, this.velocity.x, -this.velocity.x, this.velocity.y].map(x => x / velMag)
-        beginShape()
-        offset = new Vector(0, Boid.SIZE).applyMatrix(rotationMatrix)
-        vertex(x + offset.x, y + offset.y)
-        offset = new Vector(Boid.SIZE * 2 / 3, -Boid.SIZE / 2).applyMatrix(rotationMatrix)
-        vertex(x + offset.x, y + offset.y)
-        vertex(x, y)
-        offset = new Vector(-Boid.SIZE * 2 / 3, -Boid.SIZE / 2).applyMatrix(rotationMatrix)
-        vertex(x + offset.x, y + offset.y)
-        offset = new Vector(0, Boid.SIZE).applyMatrix(rotationMatrix)
-        vertex(x + offset.x, y + offset.y)
-        endShape()
+        lines = lines.map(({ fill, line }) => ({ fill, line: line.map(point => new Vector(point[0], point[1]).scale(Boid.SIZE).applyMatrix(rotationMatrix).add(this.position))}))
+        drawFromLines(lines)
+    }
+
+    drawAsCat() {
+        let lines = [
+            { fill: "white", line: [[0, 3], [2, 3], [3, 4], [5, 5], [5, 2], [4, -1], [3, -3], [1, -4], [-1, -4], [-3, -3], [-4, -1], [-5, 2], [-5, 5], [-3, 4], [-2, 3], [0, 3]] },
+            { fill: "white", line: [[-2, 1], [-3, 2], [-4, 1]] },
+            { fill: "white", line: [[2, 1], [3, 2], [4, 1]] },
+            { fill: "white", line: [[-3, 0], [3, 0]] },
+            { fill: "white", line: [[-3, -1.5], [0, 0], [3, -1.5]] },
+            { fill: "white", line: [[-3, -0.75], [0, 0], [3, -0.75]] },
+            { fill: "black", line: [[-4.5, 4.5], [-4.5, 3], [-3, 3], [-4.5, 4.5]] },
+            { fill: "black", line: [[4.5, 4.5], [4.5, 3], [3, 3], [4.5, 4.5]] },
+            { fill: "white", line: [[0, 0], [0, -2]] },
+            { fill: "white", line: [[-2, -2], [-1, -3], [0, -2], [1, -3], [2, -2]] }
+        ]
+        const velMag = this.velocity.magnitude()
+        const rotationMatrix = [this.velocity.y, this.velocity.x, -this.velocity.x, this.velocity.y].map(x => x / velMag)
+        lines = lines.map(({ fill, line }) => ({ fill, line: line.map(point => new Vector(point[0], point[1]).scale(Boid.SIZE).applyMatrix(rotationMatrix).add(this.position))}))
+        drawFromLines(lines)
+    }
+
+    /**
+     * Draws this boid as a cat using p5js
+     */
+    draw() {
+        this.drawAsCat()
     }
 }
 
 // Array where boids are held
 const boids = []
 
+function drawFromLines(lines) {
+    stroke("black")
+    lines.forEach(line => {
+        if(line.fill == "none") {
+            noFill()
+        } else {
+            fill(line.fill)
+        }
+        beginShape()
+        line.line.forEach(v => {
+            vertex(v.x, v.y)
+        })
+        endShape()
+    })
+}
+
 function initBoids() {
-    for(let i = 0; i < num_boids; i++) {
+    for(let i = 0; i < NUM_BOIDS; i++) {
         let x = Math.random() * width
         let y = Math.random() * height
         boids.push(new Boid(x, y))
