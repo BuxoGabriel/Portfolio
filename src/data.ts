@@ -39,7 +39,7 @@ export const PROJECTS = [
        description: "In my senior year of highschool, after studying and self teaching neural networks, I created one from scratch and trained it to beat a flappy bird clone using a genetic algorithm!",
        imageSrc: tadpolesSS,
        imageAlt: "A screenshot of many simulated tadpoles leaping over seaweed obstacles.",
-       url: "http://buxogabriel.github.io/ai"
+       url: "http://buxogabriel.github.io/Ai"
      },
      {
         name: "Todo App",
