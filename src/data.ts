@@ -1,6 +1,7 @@
 import tadpolesSS from "@/project-screenshots/tadpoles.png"
 import todoSS from "@/project-screenshots/todo.png"
 import musicSS from "@/project-screenshots/music.png"
+import ssgSS from "@/project-screenshots/ssg.png"
 
 export const SKILLS = [
     "Algorithmic Problem Solving",
@@ -54,6 +55,13 @@ export const PROJECTS = [
         imageSrc: musicSS,
         imageAlt: "A screenshot of the Rust Music Maker command line interface where the user creates a new song and exports it to a dot wav file.",
         url: "https://www.github.com/buxogabriel/simple-files"
+     },
+     {
+        name: "Python Static Site Generator",
+        description: "A static site generator that can convert markdown files into html and serve. Project provided by boot.dev",
+        imageSrc: ssgSS,
+        imageAlt: "A screenshot of a website made using the static site generator",
+        url: "https://github.com/BuxoGabriel/pythonSSG"
      },
     //  {
     //     name: "TSML",
