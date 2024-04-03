@@ -12,8 +12,20 @@ import { useState } from "react"
 
 
 export default function Home() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'name': 'Gabriel Buxo Portfolio',
+    'alternateName': 'Gabriel Buxo',
+    'url': 'https://buxogabriel.vercel.app',
+  }
+
   const [theme, setTheme] = useState<'light' | 'dark'>('dark')
-  return (
+  return (<>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
     <main 
       id="top" 
       className={`${theme==='light'? "bg-slate-200 text-slate-800": "bg-slate-800 text-slate-50"} text-center text-lg min-h-screen min-w-screen overflow-clip transition-colors`}
@@ -29,5 +41,5 @@ export default function Home() {
         <Footer />
       </ThemeContext.Provider>
     </main>
-  )
+  </>)
 }
