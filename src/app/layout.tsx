@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { fontBold } from "@/lib/fonts";
+import ThemeContextProvider from "@/components/theme-context";
+import Main from "@/components/main";
 
-const APP_DESCRIPTION = "Fullstack developer with over a decade of programming experience."
+const APP_DESCRIPTION = "My portfolio website. Made using the latest technology, I made this website to present projects that I have made and show my capabilities as a full stack developer."
 
 export const metadata: Metadata = {
   title: "Gabriel Buxo Portfolio",
@@ -22,9 +24,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'name': 'Gabriel Buxo Portfolio',
+    'alternateName': 'Gabriel Buxo',
+    'url': 'https://buxogabriel.vercel.app',
+    'logo': 'https://buxogabriel.vercel.app/favicon'
+  }
+
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={fontBold.className}>{children}</body>
-    </html>
-  );
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className={fontBold.className}>
+        <ThemeContextProvider>
+          <Main>{children}</Main>
+        </ThemeContextProvider>
+      </body>
+    </html>)
 }

@@ -34,6 +34,13 @@ export const LANGUAGES = [
     "Godot"
 ] as const
 
+type project = {
+   name: string,
+   description: string,
+   imageSrc: any,
+   imageAlt: string,
+   url: string
+}
 export const PROJECTS = [
      {
        name: "Neural Networks Tadpoles",
@@ -63,6 +70,13 @@ export const PROJECTS = [
         imageAlt: "A screenshot of a website made using the static site generator",
         url: "https://github.com/BuxoGabriel/pythonSSG"
      },
+   //{
+      //name: "DnDiary",
+      //description: "A public website where dnd players can keep notes on their campaigns and can give session feedback straight to their DM for review",
+      //imageSrc: null,
+      //imageAlt: "A screenshot of the user page where the user can see all of their campigns",
+      //url: "https://dndiary.vercel.app"
+   //}
     //  {
     //     name: "TSML",
     //     description: "A neural network library written in Typescript from scratch. I made this to apply object oriented principles and explore the mathematics behind machine learning."
