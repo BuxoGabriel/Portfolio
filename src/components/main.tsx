@@ -1,13 +1,12 @@
 "use client"
 
-import { PropsWithChildren } from "react";
-import { useContext } from "react"
+import { PropsWithChildren, useContext } from "react";
 import { ThemeContext } from "@/contexts";
 import LightChange from "@/components/toggle-theme"
 
 type MainProps = PropsWithChildren<{}>
 
-export default function main({children}: MainProps) {
+export default function Main({children}: MainProps) {
     const { theme } = useContext(ThemeContext);
     return <main 
         id="top" 
