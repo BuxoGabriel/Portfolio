@@ -6,8 +6,8 @@ export const metadata = {
 }
 
 export default function ZombiesSolver() {
-    return (<div>
-        <h1>Terminus Solver</h1>
+    return (<div className="flex flex-col items-center">
+        <h1 className="text-4xl p-4">Terminus Solver</h1>
         <Solver/>
     </div>)
 }
